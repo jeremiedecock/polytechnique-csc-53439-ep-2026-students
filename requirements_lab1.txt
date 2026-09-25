@@ -42,11 +42,11 @@ gymnasium[classic-control]~=1.2.1
 
 # REQUIRED DEPENDENCIES #######################################################
 
-imageio~=2.37.0   # required to visualize environments as GIF images within the notebook
 # ipykernel~=6.30.1
 ipywidgets~=8.1.7     # required for tqdm
 jupyterlab~=4.4.8
 matplotlib~=3.10.6
+moviepy~=2.2.1        # required by the "gym.wrappers.RecordVideo" wrapper to visualize episodes as MP4 videos within the notebook
 # numpy~=2.3.3
 pandas~=2.3.2
 # pettingzoo        # For lab3 on MCTS
@@ -59,11 +59,9 @@ tqdm~=4.67.1
 
 # OPTIONAL DEPENDENCIES #######################################################
 
-aim~=3.29.1
-# moviepy      # Required by the "gym.wrappers.RecordVideo" wrapper
-optuna~=4.5.0
+# optuna~=4.5.0
 # optuna-dashboard
-tensorboard~=2.20.0
+# tensorboard~=2.20.0
 # wandb
 
 
