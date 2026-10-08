@@ -1,0 +1,12 @@
+# This file lists all the dependencies that are required to run csc-53439-ep labs
+
+# To have more information about the format of this file, please refer to the
+# https://pip.pypa.io/en/stable/reference/requirements-file-format/
+
+# Lab3 also requires the Graphviz "dot" command line tool to draw the MCTS trees.
+# Graphviz is not a Python package: it has to be installed separately (see https://graphviz.org/download/).
+
+
+# REQUIRED DEPENDENCIES #######################################################
+
+jupyterlab~=4.4.10
