@@ -1,0 +1,79 @@
+# This file lists all the dependencies that are required to run csc-53439-ep labs
+
+# To have more information about the format of this file, please refer to the
+# https://pip.pypa.io/en/stable/reference/requirements-file-format/
+
+# Lab4 uses the LunarLander environment, which relies on Box2D: on some systems, the "box2d-py"
+# package has to be compiled, which requires the SWIG tool (see https://www.swig.org/).
+
+
+# PyTorch #####################################################################
+
+# Depending on your system, you may need to install PyTorch with a specific version
+# and with the appropriate CUDA version. Please refer to the official PyTorch
+# installation guide for more information: https://pytorch.org/get-started/locally/
+
+torch~=2.8.0
+# torch --index-url https://download.pytorch.org/whl/cu124    # Linux CUDA 12.4 version
+# torch --index-url https://download.pytorch.org/whl/cpu      # Linux CPU version
+
+
+# GYMNASIUM ###################################################################
+
+# Install Gymnasium with all the environments
+# C.f. https://github.com/Farama-Foundation/Gymnasium/blob/main/pyproject.toml
+
+gymnasium[classic-control,box2d]~=1.2.3
+
+# Alternatively, you can install Gymnasium with specific environments only
+
+# gymnasium[atari]~=1.2.3                      # ATARI environments only
+# gymnasium[box2d]~=1.2.3                      # Box2D environments only
+# gymnasium[classic-control]~=1.2.3            # Classic control environments only
+# gymnasium[mujoco]~=1.2.3                     # MuJoCo environments only
+
+
+# STABLE BASELINES ############################################################
+
+# https://stable-baselines3.readthedocs.io/en/master/
+# https://github.com/DLR-RM/stable-baselines3
+
+# opencv-python             # Required by some gymnasium wrappers (for other versions, see https://opencv.org/get-started/)
+# opencv-python-headless    # https://github.com/DLR-RM/stable-baselines3/issues/298
+# stable-baselines3[extra]~=2.9.0
+
+
+# REQUIRED DEPENDENCIES #######################################################
+
+# ipykernel
+ipywidgets~=8.1.8        # Required for tqdm
+jupyterlab~=4.4.10
+matplotlib~=3.10.9
+moviepy~=2.2.1           # Required by the "gym.wrappers.RecordVideo" wrapper to visualize episodes as MP4 videos within the notebook
+# numpy
+pandas~=2.3.3
+# pettingzoo             # For lab3 on MCTS
+# pygame                 # Required for the "cartpole" Gym environment but already installed with Gymnasium
+# pyvirtualdisplay       # Required for rendering in a headless environment
+# scipy
+seaborn~=0.13.2
+tqdm~=4.67.3
+
+
+# OPTIONAL DEPENDENCIES #######################################################
+
+# aim
+# optuna
+# optuna-dashboard
+# tensorboard
+# wandb
+
+
+# USEFUL TOOLS ################################################################
+
+jupytext~=1.17.3    # To convert Jupyter Notebooks to Python scripts
+mypy~=1.18.2        # For static type checking
+# pandas-stubs      # Public type stubs for pandas. C.f. https://pandas.pydata.org/docs/whatsnew/v1.5.0.html#enhancements and https://github.com/pandas-dev/pandas-stubs
+ruff~=0.13.3        # For code formatting and linting
+# types-seaborn     # Type hints for seaborn
+# types-tqdm        # Type hints for tqdm
